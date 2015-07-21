@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+  <script src='lodash.min.js'></script>
+  <script src='angular-google-map.min.js'></script>
+  <script src='//maps.googleapis.com/maps/api/js?libraries=places&sensor=false'></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body ng-app="myApplicationModule">
+  <div ng-controller="myCtrl">
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+
+    <input type="number" ng-model="map.center.latitude">
+    <input type="number" ng-model="map.center.longitude">
+    <input type="number" ng-model="map.zoom">
+
+    <input ng-model="chosenPlace" googleplace/>
+
+    <a href="#" ng-click="viewMap()">log map</a>
+
+  </div>
+</body>
+</html>
