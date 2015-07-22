@@ -1,16 +1,16 @@
 angular.module('services', []).factory('myService', function () {
 
-	service_map = {
-		center: { latitude: 0, longitude: 0},
+	 var service_map = {
+		center: { latitude: 10, longitude: 12},
 		zoom: 8
 	};
 
 	var getMap = function() {
-		return this.service_map;
+		return service_map;
 	}
 
 	var setMap = function(map) {
-		this.service_map = map;
+		service_map = map;
 	}
 
 	return {
@@ -24,7 +24,9 @@ angular.module('services', []).factory('myService', function () {
 var app = angular.module('myApplicationModule', ['uiGmapgoogle-maps', 'services']);
 
 var controller = app.controller('myCtrl', function($scope, myService) {
-	$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+	var test = myService.getMap();
+	console.log(test);
+	$scope.map = { center: test.center, zoom: test.zoom };
 
 	$scope.viewMap = function() {
 		console.log(myService.getMap());
