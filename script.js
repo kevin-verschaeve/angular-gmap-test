@@ -39,7 +39,7 @@ app.directive('googleplace', function(myService) {
 	    scope: false, // en mettant scope a false, on dit de ne pas créer de nouveau scope pour la directive, c'est donc le scope du parent qui sera pris, ce qui nous interesse ici
 	    link: function(scope, element, attrs, model) {
 	        var options = {
-	            types: ['(cities)'],
+	            types: ['address'],
 	        };
 
 	        scope.gPlace = new google.maps.places.Autocomplete(element[0], options);
