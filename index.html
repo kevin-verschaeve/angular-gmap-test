@@ -16,7 +16,9 @@
     <input type="number" ng-model="map.center.longitude">
     <input type="number" ng-model="map.zoom">
 
-    <input ng-model="chosenPlace" googleplace/>
+    <input ng-model="chosenPlace" googleplace id="addressInput" autofocus style="width:300px;">
+
+    <button ng-click="getAndApplyMap()">OK</button>
 
     <a href="#" ng-click="viewMap()">log map</a>
 

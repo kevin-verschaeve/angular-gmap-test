@@ -19,18 +19,17 @@ angular.module('services', []).factory('myService', function () {
 	}
 });
 
-
-
 var app = angular.module('myApplicationModule', ['uiGmapgoogle-maps', 'services']);
 
 var controller = app.controller('myCtrl', function($scope, myService) {
-	var test = myService.getMap();
-	console.log(test);
-	$scope.map = { center: test.center, zoom: test.zoom };
+	var map = myService.getMap();
+
+	$scope.map = { center: map.center, zoom: map.zoom };
+	$scope.chosenPlace = '';
 
 	$scope.viewMap = function() {
 		console.log(myService.getMap());
-	}
+	};
 });
 
 // autocomplete gmap
